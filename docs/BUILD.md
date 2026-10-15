@@ -124,16 +124,22 @@ colours are present, then removes the demo folder again. Set
 ## Shipping a release
 
 1. `python tools/build.py`
-2. Zip the two folders:
+2. Zip the two folders so each archive contains one top-level folder that also
+   carries a `README.txt` and the `LICENSE` (this is exactly what the GitHub
+   release ships):
    ```
-   dist/EzRename/      -> EzRename-1.0.0-windows.zip
-   dist/ezrename-cli/  -> ezrename-cli-1.0.0-windows.zip
+   dist/EzRename/      -> EzRename-1.0.0-win64-gui.zip
+   dist/ezrename-cli/  -> EzRename-1.0.0-win64-cli.zip
    ```
 3. Tag the version and attach the archives to the GitHub release:
    ```bash
    git tag -a v1.0.0 -m "EzRename 1.0.0"
    git push origin main --tags
+   gh release create v1.0.0 dist/EzRename-1.0.0-win64-gui.zip dist/EzRename-1.0.0-win64-cli.zip \
+     --title "EzRename 1.0.0" --notes-file build/release-notes.md
    ```
+   Include the SHA-256 of each archive in the release notes so users can
+   verify what they downloaded (`certutil -hashfile <file> SHA256`).
 4. Update `CHANGELOG.md` and the version in `pyproject.toml` /
    `src/ezrename/__init__.py` for the next release.
 

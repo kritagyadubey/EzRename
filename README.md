@@ -12,6 +12,7 @@
 [![Tests](https://img.shields.io/badge/tests-260%20passing-3ddc97.svg)](#running-the-tests)
 [![Platform](https://img.shields.io/badge/platform-Windows-2f6be0.svg)](#requirements)
 [![Version](https://img.shields.io/badge/version-1.0.0-2f6be0.svg)](CHANGELOG.md)
+[![Downloads](https://img.shields.io/github/downloads/kritagyadubey/EzRename/total?style=flat&color=3ddc97)](https://github.com/kritagyadubey/EzRename/releases/latest)
 
 [![Stars](https://img.shields.io/github/stars/kritagyadubey/EzRename?style=flat&color=2f6be0)](https://github.com/kritagyadubey/EzRename/stargazers)
 [![Issues](https://img.shields.io/github/issues/kritagyadubey/EzRename?color=2f6be0)](https://github.com/kritagyadubey/EzRename/issues)
@@ -115,9 +116,20 @@ extension/glob/size/text filters, search box, sorting (including natural
 
 ### Windows executables (no Python needed)
 
-1. Download or build the release folder (see [Building from source](#building-from-source)).
-2. Run `dist\EzRename\EzRename.exe` for the desktop application.
-3. Run `dist\ezrename-cli\ezrename-cli.exe --help` for the terminal tool.
+1. Download the archive for the interface you need from the
+   [latest release](https://github.com/kritagyadubey/EzRename/releases/latest):
+   `EzRename-1.0.0-win64-gui.zip` (desktop app) and/or
+   `EzRename-1.0.0-win64-cli.zip` (terminal tool).
+2. Extract the whole folder anywhere — no administrator rights needed.
+3. Run it:
+   - **GUI:** double-click `EzRename\EzRename.exe`
+   - **CLI:** open a terminal in the folder and run `ezrename-cli.exe --help`
+
+Each archive contains a single top-level folder with its own `README.txt` and
+the `LICENSE`, and the release notes list SHA-256 checksums for verification.
+
+Prefer to build it yourself? `python tools/build.py` produces the same two
+folders under `dist\` (see [Building from source](#building-from-source)).
 
 Both executables work from a normal extracted folder, need no administrator
 rights for renaming, and store settings and history in your own user profile

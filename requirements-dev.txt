@@ -1,0 +1,8 @@
+# EzRename development and release dependencies.
+#
+#   python -m pip install -r requirements.txt -r requirements-dev.txt
+
+-r requirements.txt
+
+pytest>=7.4
+pyinstaller>=6.6

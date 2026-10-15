@@ -1,0 +1,65 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib60/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ---- Virtual environments ----
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# ---- Testing / tooling caches ----
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.mypy_cache/
+.ruff_cache/
+*.log
+
+# ---- PyInstaller ----
+*.spec.bak
+*.manifest
+
+# ---- EzRename local data (history / settings must never be committed) ----
+.ezrename/
+history.db
+history.db-journal
+settings.json
+session-*.json
+rename-manifest-*.csv
+
+# ---- Local workspace / agent metadata ----
+.freebuff/
+
+# ---- Editors / OS ----
+.vscode/
+.idea/
+*.swp
+*~
+Thumbs.db
+desktop.ini
+.DS_Store

@@ -1,0 +1,7 @@
+# EzRename runtime dependencies.
+#
+# The renaming engine, history database and CLI use the Python standard library
+# only, so the command line tool runs with no third-party packages installed.
+# PySide6 is required for the graphical interface.
+
+PySide6>=6.6

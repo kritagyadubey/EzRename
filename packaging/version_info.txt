@@ -1,0 +1,34 @@
+# Windows version resource for EzRename.exe and ezrename-cli.exe.
+# Used by PyInstaller (--version-file) so Explorer shows proper file properties.
+VSVersionInfo(
+  ffi=FixedFileInfo(
+    filevers=(1, 0, 0, 0),
+    prodvers=(1, 0, 0, 0),
+    mask=0x3F,
+    flags=0x0,
+    OS=0x40004,
+    fileType=0x1,
+    subtype=0x0,
+    date=(0, 0),
+  ),
+  kids=[
+    StringFileInfo(
+      [
+        StringTable(
+          "040904B0",
+          [
+            StringStruct("CompanyName", "EzRename"),
+            StringStruct("FileDescription", "EzRename - safe bulk file renamer"),
+            StringStruct("FileVersion", "1.0.0.0"),
+            StringStruct("InternalName", "EzRename"),
+            StringStruct("LegalCopyright", "Copyright (c) 2026 Kritagya Dubey - MIT licence"),
+            StringStruct("OriginalFilename", "EzRename.exe"),
+            StringStruct("ProductName", "EzRename"),
+            StringStruct("ProductVersion", "1.0.0"),
+          ],
+        )
+      ]
+    ),
+    VarFileInfo([VarStruct("Translation", [1033, 1200])]),
+  ],
+)

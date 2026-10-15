@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>EzRename — interface gallery</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 32px;
+    background: #0e1014; color: #e9edf4;
+    font: 15px/1.55 "Segoe UI", system-ui, sans-serif;
+  }
+  header { max-width: 1180px; margin: 0 auto 28px; }
+  h1 { font-size: 28px; margin: 0 0 6px; font-weight: 600; letter-spacing: -0.2px; }
+  p.sub { color: #9aa4b6; margin: 0; }
+  .grid {
+    max-width: 1180px; margin: 0 auto;
+    display: grid; gap: 26px;
+  }
+  figure { margin: 0; }
+  figure img {
+    width: 100%; height: auto; display: block;
+    border: 1px solid #2a3040; border-radius: 12px;
+    box-shadow: 0 18px 40px rgba(0,0,0,.45);
+  }
+  figcaption { margin-top: 10px; color: #9aa4b6; font-size: 14px; }
+  figcaption strong { color: #e9edf4; font-weight: 600; }
+  code { background: #1b1f27; padding: 2px 6px; border-radius: 6px; color: #7fb0ff; }
+</style>
+</head>
+<body>
+<header>
+  <h1>EzRename — interface gallery</h1>
+  <p class="sub">Every image below is a screenshot of the running application, captured by
+    <code>tools/make_screenshots.py</code>.</p>
+</header>
+<div class="grid">
+  <figure>
+    <img src="../assets/screenshots/01-dashboard.png" alt="Dashboard page">
+    <figcaption><strong>Dashboard.</strong> Folder actions, real counters for the current
+      selection and the most recent rename sessions with a one-click undo.</figcaption>
+  </figure>
+  <figure>
+    <img src="../assets/screenshots/02-workspace-preview.png" alt="Workspace with a rename preview">
+    <figcaption><strong>Workspace.</strong> Original name next to the proposed name, with the
+      changed characters highlighted, status per row and the rename sequence on the right.</figcaption>
+  </figure>
+  <figure>
+    <img src="../assets/screenshots/03-workspace-conflicts.png" alt="Workspace showing duplicate targets">
+    <figcaption><strong>Conflicts are blocked, not guessed.</strong> Operations that would give two
+      files the same name are marked in red and the apply button stays disabled.</figcaption>
+  </figure>
+  <figure>
+    <img src="../assets/screenshots/04-tools.png" alt="Rename tools page">
+    <figcaption><strong>Rename tools.</strong> The operation catalogue, the ordered sequence with
+      per-step editors, saved presets and the template variable reference.</figcaption>
+  </figure>
+  <figure>
+    <img src="../assets/screenshots/05-history.png" alt="History and undo page">
+    <figcaption><strong>History &amp; undo.</strong> Sessions survive restarts; each one can be
+      re-verified, restored, exported as a manifest or deleted from the record.</figcaption>
+  </figure>
+  <figure>
+    <img src="../assets/screenshots/06-settings.png" alt="Settings page">
+    <figcaption><strong>Settings.</strong> Theme and accent, selection defaults, numbering defaults,
+      history retention, storage locations and the shortcut reference.</figcaption>
+  </figure>
+  <figure>
+    <img src="../assets/screenshots/07-light-theme.png" alt="Light theme">
+    <figcaption><strong>Light theme.</strong> The same design system with the light palette and a
+      different accent colour — every control is styled from the same tokens.</figcaption>
+  </figure>
+  <figure>
+    <img src="../assets/screenshots/08-documents.png" alt="Renaming documents with a date prefix">
+    <figcaption><strong>Documents workflow.</strong> Space normalisation, lower-cased extensions and
+      a date prefix added in one pass.</figcaption>
+  </figure>
+</div>
+</body>
+</html>

@@ -160,7 +160,7 @@ def _add_operation_flags(parser: argparse.ArgumentParser) -> None:
         metavar="FROM=TO",
         action="append",
         default=None,
-        help="replace one character with another (repeatable, e.g. --replace-char '&=and')",
+        help="replace one character with another (repeatable, e.g. --replace-char '&=_')",
     )
     group.add_argument("--no-trim", action="store_true", help="do not trim outer whitespace")
 

@@ -193,7 +193,7 @@ ezrename rename ./photos --replace-spaces "_" --dry-run
 ezrename rename ./photos --find "IMG_" --replace "Photo_" --yes
 
 # Sequential numbering with padding, in name order
-ezrename rename ./photos --number --start 1 --padding 3 --position prefix --yes
+ezrename rename ./photos --number --start 1 --padding 3 --number-position prefix --yes
 
 # Case conversion, recursive, only JPEG/PNG files
 ezrename rename ./photos --recursive --ext jpg,png --case lower --dry-run

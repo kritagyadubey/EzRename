@@ -21,11 +21,14 @@ python -m venv .venv
 .venv\Scripts\activate                 # Windows
 source .venv/bin/activate              # Linux / macOS
 python -m pip install -r requirements-dev.txt
+python -m pip install -e .             # installs the package itself (it lives under src/)
 ```
 
 `requirements.txt` holds the runtime dependency (PySide6); the CLI, the engine
 and the history database need nothing beyond the standard library.
-`requirements-dev.txt` adds pytest and PyInstaller.
+`requirements-dev.txt` adds pytest and PyInstaller. `pip install -e .` is what
+makes `ezrename` importable — the package lives under `src/`, so without it
+`python -m ezrename` raises `ModuleNotFoundError`.
 
 ## Running the source version
 

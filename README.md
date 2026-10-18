@@ -8,7 +8,7 @@
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-2f6be0.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-2f6be0.svg)](https://www.python.org/downloads/)
-[![Requires PySide6](https://img.shields.io/badge/gui-PySide6%206-2f6be0.svg)](requirements.txt)
+[![Requires PySide6](https://img.shields.io/badge/gui-PySide6%206.6%2B-2f6be0.svg)](requirements.txt)
 [![Tests](https://img.shields.io/badge/tests-260%20passing-3ddc97.svg)](#running-the-tests)
 [![Platform](https://img.shields.io/badge/platform-Windows-2f6be0.svg)](#requirements)
 [![Version](https://img.shields.io/badge/version-1.0.0-2f6be0.svg)](CHANGELOG.md)
@@ -43,7 +43,9 @@ so a preview in the app and a `--dry-run` in the terminal always agree.
 - [Project structure](#project-structure)
 - [Dependencies](#dependencies)
 - [Known limitations](#known-limitations)
+- [Contributing](#contributing)
 - [License](#license)
+- [Changelog](#changelog)
 
 ## What it looks like
 
@@ -72,7 +74,7 @@ anything is blocked.
 |---|---|
 | ![Settings page](assets/screenshots/06-settings.png) | ![Light theme](assets/screenshots/07-light-theme.png) |
 
-A documents workflow showing space normalisation, lower-cased extensions and a
+A documents workflow showing space normalization, lower-cased extensions and a
 date prefix applied in one pass: [08-documents.png](assets/screenshots/08-documents.png).
 All eight screenshots are also browsable in [`docs/gallery.html`](docs/gallery.html).
 
@@ -144,19 +146,22 @@ cd EzRename
 python -m venv .venv
 .venv\Scripts\activate            # or: source .venv/bin/activate
 python -m pip install -r requirements-dev.txt
+python -m pip install -e .       # installs the package itself (it lives under src/)
 ```
 
-Launch the application or the CLI without installing anything:
+The package lives under `src/`, so `requirements-dev.txt` alone installs the
+dependencies but not EzRename — `python -m ezrename` only works after
+`pip install -e .` (shown above) or with `PYTHONPATH=src` pointing at the
+`src/` folder. Once installed, launch the application or the CLI:
 
 ```bash
 python -m ezrename                 # graphical interface
 python -m ezrename.cli.main --help # command line interface
 ```
 
-Or install it as a command:
+The editable install also puts two commands on your PATH:
 
 ```bash
-python -m pip install -e .
 ezrename --help
 ezrename-gui
 ```
@@ -216,7 +221,8 @@ ezrename rename ./music --template "{index:02d} - {stem}{ext}" --yes
 ezrename rename ./photos --find "IMG" --replace "Photo" --replace-spaces "_" --case lower --yes
 
 # Conflicts are reported and blocked, exit code 3
-ezrename rename ./photos --find "1" --replace "2" ; echo $?
+ezrename rename ./photos --find "1" --replace "2" ; echo $?            # bash
+ezrename rename ./photos --find "1" --replace "2" ; echo $LASTEXITCODE # PowerShell
 
 # Records, recovery and automation
 ezrename history --limit 10
@@ -423,6 +429,13 @@ install. Development additionally needs `pytest` and `pyinstaller`
 - **Screen-reader support is basic.** Keyboard navigation, focus order and
   tooltips are in place, but the custom-painted cells are not described to
   assistive technology as thoroughly as native controls would be.
+
+## Contributing
+
+Bug reports, feature requests and pull requests are welcome — please open an
+[issue](https://github.com/kritagyadubey/EzRename/issues) to discuss larger
+changes first. By contributing you agree that your contribution is licensed
+under the [MIT License](LICENSE).
 
 ## License
 
